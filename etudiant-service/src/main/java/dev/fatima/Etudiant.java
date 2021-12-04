@@ -1,9 +1,6 @@
 package dev.fatima;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +16,10 @@ import lombok.ToString;
 public class Etudiant {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	private long roomId;
+	@Transient
+	private Room room;
+
 	private String name;
 	private int age;
 }
